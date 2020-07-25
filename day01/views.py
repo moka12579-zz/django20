@@ -54,3 +54,13 @@ def view_template_2(request):
         "lis": [n for n in range(10)],
         "now": datetime.datetime.now,
     })
+def view_template_3(request):
+    return render(request, 'day01.html')
+
+def view_template_4(request, username):
+    name = request.GET['username']
+    return render(request, 'user.html', context={
+        'username': name
+    })
+def view_template_5(request):
+    return render(request, 'img.html')
